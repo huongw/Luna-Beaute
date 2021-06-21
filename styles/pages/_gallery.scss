@@ -1,0 +1,151 @@
+.gallery-bg {
+	@include flex;
+	justify-content: center;
+	min-height: 100vh;
+	overflow: hidden;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(34, 33, 33, 0.3);
+	}
+
+	h2 {
+		padding: 0 1rem;
+		text-align: center;
+		line-height: 6rem;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -2;
+		object-position: center;
+		object-fit: cover;
+	}
+}
+
+.gallery {
+	padding-bottom: 5rem;
+
+	.gallery-info {
+		text-align: center;
+		position: relative;
+		padding: 5rem 0;
+		margin: 8rem 0;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60%;
+			height: 0.5rem;
+			border-radius: 50%;
+			background-color: rgb(236, 236, 236);
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		h3 {
+			font-family: $title;
+			font-weight: normal;
+			font-size: 4.5rem;
+			color: rgb(17, 17, 17);
+		}
+
+		p {
+			font-size: 2.5rem;
+			width: 50%;
+			margin: auto;
+		}
+	}
+
+	.gallery-container {
+		column-count: 4;
+		background-color: $title-color;
+		padding: 1rem 1rem 0;
+		margin: 0 3rem;
+
+		.gallery-img {
+			overflow: hidden;
+			margin-bottom: 1rem;
+			cursor: pointer;
+
+			img {
+				width: 100%;
+				transition: 0.25s ease-in-out;
+
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1075px) {
+	.gallery {
+		.gallery-info {
+			padding: 3rem 0;
+			margin: 5rem 0;
+		}
+		.gallery-container {
+			column-count: 3;
+		}
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.gallery-bg {
+		h2 {
+			font-size: 8rem;
+		}
+	}
+	.gallery {
+		.gallery-info {
+			h3 {
+				font-size: 3.5rem;
+			}
+			p {
+				width: 90%;
+				font-size: 2rem;
+			}
+		}
+		.gallery-container {
+			margin: 0 1.5rem;
+			column-count: 2;
+		}
+	}
+}
+
+@media only screen and (max-width: 440px) {
+	.gallery-bg {
+		h2 {
+			font-size: 6.5rem;
+		}
+	}
+
+	.gallery {
+		.gallery-info {
+			p {
+				font-size: 1.8rem;
+			}
+		}
+		.gallery-container {
+			column-count: 1;
+		}
+	}
+}

@@ -1,0 +1,302 @@
+.contact {
+	@include flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+	padding: 25rem 0 10rem;
+
+	.contact-container {
+		flex: 0 1 65rem;
+		order: 1;
+		@include flex($direction: column);
+
+		h2 {
+			transform: translateX(-15rem);
+			line-height: 9rem;
+		}
+		p {
+			width: 90%;
+			padding: 1rem 0 2rem;
+		}
+
+		.redgirl {
+			display: none;
+			width: 70%;
+			min-width: 40rem;
+		}
+	}
+
+	.img-container {
+		@include flex;
+		flex: 1 1 80rem;
+		max-width: 100rem;
+		position: relative;
+		z-index: -1;
+
+		#sunflowers {
+			width: 55%;
+			min-width: 40rem;
+		}
+
+		.redgirl {
+			width: 45%;
+			transform: translateX(10rem);
+			min-width: 30rem;
+		}
+	}
+}
+
+// Inquries
+
+.contact-info {
+	@include flex($align-items: flex-start);
+	flex-wrap: wrap;
+	padding: 3rem 0;
+	margin: 15rem 0 10rem;
+	position: relative;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 95%;
+		height: 0.5rem;
+		border-radius: 50%;
+		background-color: rgb(236, 236, 236);
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	.contact-box {
+		flex: 1 1 76rem;
+		@include flex($align-items: flex-start);
+
+		.contact-box1 {
+			flex-grow: 1;
+			padding-bottom: 1rem;
+			@include flex($direction: column);
+
+			h3 {
+				color: $sub-color;
+				padding-bottom: 1rem;
+			}
+			p {
+				font-size: 2.5rem;
+			}
+		}
+	}
+}
+
+// Form
+
+.form-container {
+	@include flex($direction: column);
+	justify-content: center;
+	padding-bottom: 5rem;
+
+	h3 {
+		font-size: 4rem;
+	}
+
+	form {
+		@include flex($direction: column, $align-items: flex-start);
+		width: 50%;
+
+		label {
+			font-size: 2.5rem;
+		}
+
+		input {
+			width: 100%;
+			min-height: 5rem;
+			outline: none;
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		textarea {
+			@extend input;
+			min-height: 30vh;
+			resize: none;
+			font-size: 2rem;
+			margin-bottom: 2.5rem;
+		}
+		button {
+			background-color: #fff;
+			padding: 2rem 0;
+			width: 40%;
+			letter-spacing: 0.3rem;
+			font-family: $nav-txt;
+			font-size: 2rem;
+			outline: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 1527px) {
+	.contact {
+		padding: 20rem 0 0;
+		.contact-container {
+			transform: translateY(-9rem);
+
+			h2 {
+				transform: translateX(0);
+			}
+		}
+
+		.img-container {
+			padding-right: 15rem;
+		}
+	}
+
+	.contact-info {
+		margin: 7rem 0;
+	}
+
+	.form-container {
+		form {
+			width: 80%;
+		}
+	}
+}
+
+@media only screen and (max-width: 880px) {
+	.contact {
+		padding-top: 10rem;
+		.contact-container {
+			justify-content: space-between;
+			transform: translateY(0);
+			flex-basis: 100%;
+
+			h2 {
+				display: none;
+			}
+
+			p {
+				font-size: 2.5rem;
+				width: 80%;
+				padding-top: 0;
+			}
+
+			.redgirl {
+				display: block;
+				width: 80%;
+				min-width: 25rem;
+			}
+		}
+
+		.img-container {
+			padding-right: 0;
+			justify-content: center;
+
+			&::after {
+				content: "Contact";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 10rem;
+				font-family: $txt;
+				color: $title-color;
+			}
+
+			#sunflowers {
+				min-width: 25rem;
+				width: 80%;
+			}
+
+			.redgirl {
+				display: none;
+			}
+		}
+	}
+	.contact-info {
+		margin: 5rem auto;
+	}
+}
+
+@media only screen and (max-width: 740px) {
+	.contact {
+		.img-container {
+			padding-right: 0;
+			justify-content: center;
+
+			&::after {
+				font-size: 8rem;
+			}
+		}
+	}
+
+	.contact-info {
+		flex-direction: column;
+		width: 85%;
+
+		.contact-box {
+			flex: 0 1 0;
+			flex-direction: column;
+
+			.contact-box1 {
+				align-items: flex-start;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.contact {
+		.contact-container {
+			p {
+				font-size: 2rem;
+			}
+		}
+
+		.img-container {
+			padding-right: 0;
+			justify-content: center;
+
+			&::after {
+				font-size: 6rem;
+			}
+		}
+	}
+
+	.contact-info {
+		margin-bottom: 3rem;
+		.contact-box {
+			.contact-box1 {
+				h3 {
+					font-size: 2.5rem;
+				}
+
+				p {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+
+	.form-container {
+		h3 {
+			font-size: 3rem;
+		}
+		form {
+			width: 90%;
+			label {
+				font-size: 2rem;
+			}
+			input {
+				min-height: 3.5rem;
+				font-size: 1.6rem;
+			}
+			button {
+				padding: 0.5rem;
+				font-size: 1.8rem;
+			}
+		}
+	}
+}

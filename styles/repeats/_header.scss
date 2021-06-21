@@ -1,0 +1,143 @@
+header {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+
+	nav {
+		@include flex;
+		width: 90%;
+		margin: auto;
+		min-height: 5vh;
+
+		#logo {
+			flex-grow: 1;
+			position: relative;
+			z-index: 3;
+			padding-top: 1rem;
+
+			a {
+				color: $title-color;
+				font-size: 3.7rem;
+				font-family: $title;
+				font-weight: normal;
+			}
+		}
+
+		.nav-links {
+			width: 45%;
+			@include flex;
+			justify-content: space-around;
+
+			li {
+				list-style-type: none;
+
+				.active {
+					border-bottom: 2px solid rgb(243, 109, 0);
+					width: fit-content;
+				}
+
+				a {
+					color: $title-color;
+					font-size: 2rem;
+					font-family: $nav-txt;
+					transition: 0.2s linear;
+
+					&:hover {
+						color: rgb(143, 88, 42);
+					}
+				}
+			}
+		}
+
+		.hamburger {
+			display: none;
+			cursor: pointer;
+			position: relative;
+			z-index: 3;
+			div {
+				width: 4.5rem;
+				height: 0.2rem;
+				background-color: $title-color;
+				margin: 0.8rem 0;
+			}
+		}
+	}
+}
+
+.header-scroll {
+	background-color: $main-color;
+	box-shadow: 2px 2px 5px rgba(70, 69, 69, 0.5);
+	transition: all 0.3s ease-in-out;
+}
+
+@keyframes navLinkFade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-5px, 2px);
+}
+
+.toggle .line2 {
+	transform: rotate(45deg) translate(-5px, -2px);
+}
+
+@media only screen and (max-width: 1300px) {
+	header {
+		nav {
+			.nav-links {
+				position: absolute;
+				top: 0;
+				right: -10000px;
+				background-color: $main-color;
+				flex-direction: column;
+				justify-content: space-evenly;
+				min-height: 100vh;
+				width: 100%;
+
+				li {
+					opacity: 0;
+					a {
+						font-size: 3rem;
+
+						&:hover {
+							color: rgb(121, 97, 78);
+						}
+					}
+				}
+			}
+
+			.nav-active {
+				right: 0;
+			}
+
+			.hamburger {
+				display: block;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	header {
+		nav {
+			#logo a {
+				font-size: 2.7rem;
+			}
+
+			.hamburger > div {
+				width: 3.7rem;
+			}
+
+			.nav-links li a {
+				font-size: 2rem;
+			}
+		}
+	}
+}

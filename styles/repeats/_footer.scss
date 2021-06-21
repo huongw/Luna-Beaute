@@ -1,0 +1,211 @@
+footer {
+	min-height: 25vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+
+	.footer-title {
+		text-align: center;
+		position: relative;
+
+		&::before,
+		&::after {
+			position: absolute;
+			top: 50%;
+			content: "";
+			height: 0.2rem;
+			width: 10%;
+			background-color: #000;
+			transform: translateX(15%);
+		}
+
+		&::before {
+			transform: translateX(-120%);
+		}
+	}
+}
+
+.social-links {
+	text-align: center;
+	font-size: 3.5rem;
+	padding: 2rem;
+
+	a {
+		color: #000;
+		margin: 0 1rem;
+	}
+}
+
+.footer-flex {
+	@include flex;
+
+	.company-info {
+		@include flex($direction: column);
+		flex: 1 1 20rem;
+
+		a {
+			color: rgb(61, 61, 61);
+			font-size: 2.5rem;
+			transition: 0.2s linear;
+			margin: 0.5rem 0;
+
+			&:hover {
+				color: rgb(167, 164, 164);
+			}
+		}
+	}
+
+	.customer-service {
+		@extend .company-info;
+	}
+}
+
+.newsletter {
+	text-align: center;
+	padding: 2rem;
+
+	h4 {
+		padding-bottom: 1rem;
+		font-size: 2.5rem;
+	}
+
+	input {
+		min-height: 3.5rem;
+		padding: 0.4rem;
+		width: clamp(20rem, 80%, 40rem);
+		font-size: 2rem;
+	}
+
+	button {
+		padding: 0.4rem;
+		cursor: pointer;
+		background-color: #fff;
+		border: 1px solid;
+		font-size: 2rem;
+		letter-spacing: 0.1rem;
+	}
+}
+
+.copyright {
+	text-align: center;
+	padding-bottom: 1rem;
+	font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 850px) {
+	.social-links {
+		font-size: 3rem;
+		padding: 1rem;
+	}
+
+	.footer-flex {
+		.company-info {
+			a {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.newsletter {
+		h4 {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	footer {
+		.footer-title {
+			&::before,
+			&::after {
+				width: 15%;
+			}
+		}
+	}
+
+	.social-links {
+		font-size: 2.5rem;
+	}
+
+	.footer-flex {
+		.company-info {
+			a {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.newsletter {
+		h4 {
+			font-size: 1.8rem;
+		}
+
+		input {
+			font-size: 1.8rem;
+		}
+
+		button {
+			font-size: 1.8rem;
+			width: 80%;
+		}
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	footer {
+		.footer-title {
+			font-size: 2.5rem;
+		}
+	}
+
+	.social-links {
+		font-size: 2rem;
+	}
+
+	.footer-flex {
+		.company-info {
+			a {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.newsletter {
+		h4 {
+			font-size: 1.6rem;
+		}
+
+		input {
+			font-size: 1.6rem;
+		}
+
+		button {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	.footer-flex {
+		.company-info {
+			a {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.newsletter {
+		input {
+			width: 100%;
+		}
+
+		button {
+			width: 100%;
+		}
+	}
+
+	.copyright {
+		font-size: 1.4rem;
+	}
+}

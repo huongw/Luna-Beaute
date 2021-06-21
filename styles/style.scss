@@ -1,0 +1,18 @@
+// Global
+@import "helpers/global";
+@import "helpers/mixins";
+
+// Pages
+@import "pages/home";
+@import "pages/contact";
+@import "pages/about";
+@import "pages/services";
+@import "pages/gallery";
+
+// Repeats
+@import "repeats/header";
+@import "repeats/footer";
+@import "repeats/wrapper";
+
+//Components
+@import "components/preloader";

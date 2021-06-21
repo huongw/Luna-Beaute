@@ -1,0 +1,239 @@
+.service-bg {
+	min-height: 100vh;
+	position: relative;
+	@include flex;
+	justify-content: center;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(33, 33, 34, 0.2);
+	}
+
+	h2 {
+		order: 1;
+		position: relative;
+		z-index: 3;
+		text-align: center;
+		padding: 0 1rem;
+		line-height: 6rem;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -2;
+		object-position: center;
+		object-fit: cover;
+	}
+}
+
+// Button Container
+
+.button-container {
+	@include flex;
+	justify-content: space-around;
+	min-height: 5vh;
+	padding: 2rem 0;
+	position: absolute;
+	top: 0;
+	transform: translateY(-3.5rem);
+	width: 50%;
+	background-color: $title-color;
+
+	button {
+		background-color: transparent;
+		font-size: 3rem;
+		outline: none;
+		border: none;
+		letter-spacing: 0.3rem;
+		cursor: pointer;
+		color: $txt-color;
+	}
+
+	.button-color {
+		color: rgb(209, 175, 111);
+	}
+}
+
+// Menu Container
+
+.menu-container {
+	@include flex($direction: column);
+	position: relative;
+	padding-bottom: 5rem;
+
+	.service-menu {
+		width: 60%;
+		display: none;
+		background-color: $title-color;
+		margin: 10rem auto 0;
+		padding-bottom: 5rem;
+
+		table {
+			text-transform: capitalize;
+			width: 100%;
+
+			caption {
+				padding: 5rem 0;
+				font-size: 6rem;
+				color: $txt-color;
+			}
+
+			thead {
+				text-align: left;
+				color: rgb(221, 150, 89);
+				font-size: 4.5rem;
+
+				th {
+					padding-left: 8rem;
+				}
+			}
+
+			td {
+				font-size: 3.5rem;
+				color: $txt-color;
+				padding-left: 7.5rem;
+				padding-bottom: 1rem;
+				line-height: 3.5rem;
+			}
+
+			.price {
+				text-align: center;
+				padding-left: 0;
+			}
+
+			.description {
+				font-size: 2.5rem;
+				color: rgb(221, 150, 89);
+			}
+		}
+	}
+
+	.menu-active {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 1960px) {
+	.menu-container {
+		.service-menu {
+			width: 80%;
+		}
+	}
+}
+
+@media only screen and (max-width: 1350px) {
+	.menu-container {
+		.button-container {
+			width: 75%;
+		}
+		.service-menu {
+			width: 90%;
+			table {
+				caption {
+					font-size: 5rem;
+				}
+				thead th,
+				td {
+					padding-left: 5.5rem;
+					font-size: 4rem;
+				}
+				td {
+					font-size: 3rem;
+					line-height: 3rem;
+				}
+				.price {
+					padding-right: 2rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 740px) {
+	.service-bg {
+		h2 {
+			font-size: 8rem;
+		}
+	}
+
+	.menu-container {
+		.button-container {
+			padding: 1rem 0;
+			transform: translateY(-2.5rem);
+			button {
+				font-size: 2.5rem;
+			}
+		}
+		.service-menu {
+			width: 95%;
+
+			table {
+				caption {
+					font-size: 5rem;
+					padding: 2.5rem;
+				}
+				thead th,
+				td {
+					padding-left: 3rem;
+					font-size: 3rem;
+				}
+				td {
+					font-size: 2.5rem;
+					line-height: 2.5rem;
+				}
+				.description {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.service-bg {
+		h2 {
+			font-size: 6.5rem;
+		}
+	}
+
+	.menu-container {
+		.button-container {
+			width: 90%;
+			button {
+				font-size: 1.8rem;
+			}
+		}
+		.service-menu {
+			margin-top: 5rem;
+			table {
+				caption {
+					font-size: 3.5rem;
+				}
+				thead th,
+				td {
+					font-size: 2.5rem;
+					padding: 0 1.5rem;
+				}
+				td {
+					font-size: 2rem;
+				}
+				.price {
+					padding-right: 1.5rem;
+				}
+				.description {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+}

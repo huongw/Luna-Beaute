@@ -1,0 +1,27 @@
+.preloader-bg {
+	position: fixed;
+	z-index: 120;
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+
+	.loader {
+		font-family: $title;
+		font-size: 5rem;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: rgb(243, 158, 0);
+		animation: loader 1s;
+	}
+}
+
+@keyframes loader {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
