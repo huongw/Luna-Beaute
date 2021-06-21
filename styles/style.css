@@ -413,7 +413,7 @@ a {
     height: 60vh;
   }
   .menu-section {
-    padding: 4rem 0 7rem;
+    padding-top: 4rem;
   }
   .menu-section h2 {
     -webkit-transform: translateY(0);
@@ -994,7 +994,7 @@ a {
 
 @media only screen and (max-width: 880px) {
   .about {
-    padding: 11.5rem 5rem 0;
+    padding: 11.5rem 5rem 5rem;
   }
   .about .about-container p {
     font-size: 2.5rem;
@@ -1009,7 +1009,7 @@ a {
 
 @media only screen and (max-width: 500px) {
   .about {
-    padding: 11.5rem 2rem 0;
+    padding: 11.5rem 2rem 5rem;
     gap: 1.5rem;
   }
   .about .about-container p {
