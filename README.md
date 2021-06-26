@@ -2,7 +2,7 @@
 
 ## Created by Whitney H.
 
-Luna Beaute is a beauty website I've been working on ever since I started learning html/css back in 2020. This project resonates with me deeply as I was an esthetician starting out. Now I am a front-end web developer ready to grow and learn everyday!
+Luna Beaute is a beauty website I've been working on ever since I started learning HTML/CSS/JS back in 2020. There were alot of challenges along the way, but I'm happy to say that I've learned a lot with different libraries and tools used to build this project.
 
 ## Tech Stack
 
