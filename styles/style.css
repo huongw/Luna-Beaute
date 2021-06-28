@@ -44,6 +44,12 @@ a {
   border-radius: 0.5rem;
 }
 
+@media only screen and (max-width: 280px) {
+  html {
+    font-size: 53%;
+  }
+}
+
 .hero {
   min-height: 100vh;
   position: relative;
@@ -371,6 +377,7 @@ a {
   .hero .welcome h2 {
     font-size: 8rem;
     line-height: 8rem;
+    padding: 0;
   }
   .btn {
     font-size: 3rem;
