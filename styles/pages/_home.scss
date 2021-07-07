@@ -54,10 +54,10 @@
 	border: 0.2rem solid #fff;
 	position: relative;
 	z-index: 1;
-	transition: 0.4s ease-in-out;
+	transition: 0.2s ease-in-out;
 
 	&:hover {
-		background-color: rgb(121, 97, 78);
+		background-color: rgb(80, 50, 35);
 	}
 }
 
@@ -86,6 +86,7 @@
 		flex: 1 1 85rem;
 		max-width: 120rem;
 		@include flex;
+		overflow: hidden;
 
 		.large-img {
 			width: 60%;
@@ -161,6 +162,7 @@
 			z-index: 2;
 			border: 2px solid #fff;
 			padding: 1vw;
+			overflow: hidden;
 
 			span {
 				display: block;
@@ -204,7 +206,7 @@
 	}
 }
 
-@media only screen and (max-width: 1919px) {
+@media only screen and (max-width: 1907px) {
 	.intro-section {
 		padding: 10rem 0rem;
 		.intro-txt {
