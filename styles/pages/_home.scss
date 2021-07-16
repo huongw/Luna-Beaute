@@ -47,7 +47,7 @@
 // CTA Button
 
 .btn {
-	background-color: rgb(17, 17, 17);
+	background-color: rgb(10, 10, 10);
 	padding: 1.5rem 2rem;
 	color: $title-color;
 	font-size: 3.5rem;
@@ -55,6 +55,7 @@
 	position: relative;
 	z-index: 1;
 	transition: 0.2s ease-in-out;
+	box-shadow: 0.5rem 0.5rem 1rem rgb(34, 34, 34);
 
 	&:hover {
 		background-color: rgb(80, 50, 35);

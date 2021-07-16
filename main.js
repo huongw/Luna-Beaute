@@ -72,15 +72,26 @@ gsap.registerPlugin(ScrollTrigger);
 function heroAnim() {
 	const timeline = gsap.timeline();
 
-	timeline.from(
-		".hero img",
-		{
-			scale: 1.5,
-			duration: 1.5,
-			ease: "ease",
-		},
-		1
-	);
+	timeline
+		.from(
+			".hero img",
+			{
+				scale: 1.5,
+				duration: 1,
+				delay: 0.5,
+				ease: "ease",
+			},
+			1
+		)
+		.from("#hero-title", {
+			xPercent: 20,
+			opacity: 0,
+			duration: 1,
+		})
+		.from("#cta", {
+			opacity: 0,
+			duration: 0.1,
+		});
 }
 
 heroAnim();
@@ -256,7 +267,8 @@ function serviceAnim() {
 }
 
 serviceAnim();
-// Contact
+
+// Contact Page
 
 function contactAnim() {
 	const contactTl = gsap.timeline({ delay: 0.1 });

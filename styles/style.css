@@ -112,7 +112,7 @@ a {
 }
 
 .btn {
-  background-color: #111111;
+  background-color: #0a0a0a;
   padding: 1.5rem 2rem;
   color: #e4e3e2;
   font-size: 3.5rem;
@@ -121,6 +121,8 @@ a {
   z-index: 1;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
+  -webkit-box-shadow: 0.5rem 0.5rem 1rem #222222;
+          box-shadow: 0.5rem 0.5rem 1rem #222222;
 }
 
 .btn:hover {
