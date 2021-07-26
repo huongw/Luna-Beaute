@@ -1496,6 +1496,8 @@ header nav .nav-links {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 header nav .nav-links li {
@@ -1575,7 +1577,9 @@ header nav .hamburger div {
   header nav .nav-links {
     position: absolute;
     top: 0;
-    right: -10000px;
+    right: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     background-color: #d1b474;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1597,7 +1601,8 @@ header nav .hamburger div {
     color: #79614e;
   }
   header nav .nav-active {
-    right: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   header nav .hamburger {
     display: block;

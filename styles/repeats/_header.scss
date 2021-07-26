@@ -28,6 +28,7 @@ header {
 			width: 45%;
 			@include flex;
 			justify-content: space-around;
+			transition: all 0.8s ease;
 
 			li {
 				list-style-type: none;
@@ -94,7 +95,8 @@ header {
 			.nav-links {
 				position: absolute;
 				top: 0;
-				right: -10000px;
+				right: 0;
+				transform: translateX(100%);
 				background-color: $main-color;
 				flex-direction: column;
 				justify-content: space-evenly;
@@ -114,7 +116,7 @@ header {
 			}
 
 			.nav-active {
-				right: 0;
+				transform: translateX(0);
 			}
 
 			.hamburger {

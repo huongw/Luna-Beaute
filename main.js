@@ -33,7 +33,6 @@ const burgerLine2 = document.querySelector(".hamburger .line2");
 const navLinks = document.querySelectorAll(".nav-links li");
 
 function openMenu() {
-	nav.style.transition = "all 0.8s ease";
 	nav.classList.toggle("nav-active");
 
 	burgerLine1.style.transition = "all 0.3s ease";
